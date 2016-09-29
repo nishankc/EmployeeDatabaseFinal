@@ -1,0 +1,183 @@
+﻿@model EmployeeDatabaseFinal.Employee
+
+@{
+    ViewBag.Title = "Employee Database Menu";
+}
+
+@if (ViewBag.displayRole == "yes")
+{
+    <h1>Manager</h1>
+    <div class="container">
+        <h1 class="page-header text-center">WELCOME TO THE EMPLOYEE DATABASE</h1>
+        <div class="col-md-4">
+
+        </div>
+
+        @*@using (Html.BeginForm("ViewEmployees", "Home"))
+            {
+                <button class="btn-lg btn-default text-center col-md-8" type="submit">View Employee Database</button>
+            }*@
+        <input class="btn-lg btn-primary text-center col-md-12" type="button" value="View Employee Database" onclick="location.href='@Url.Action("ViewEmployees", "Home")'" />
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="col-md-4">
+
+        </div>
+        @*@using (Html.BeginForm("Create", "Home"))
+            {
+                <button class="btn-lg btn-default text-center col-md-8" type="submit">Create a new Employee</button>
+            }*@
+        <input class="btn-lg btn-default text-center col-md-12" type="button" value="Create a new Employee" onclick="location.href='@Url.Action("Create", "Home")'" />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="col-md-4">
+
+        </div>
+        @if (Request.IsAuthenticated)
+        {
+
+            @*using (Html.BeginForm("ChangePasswordCheck", "Account"))
+                {
+                    <button class="btn-lg btn-default text-center col-md-8" type="submit">Change Password</button>
+                }*@
+            <input class="btn-lg btn-warning text-center col-md-12" type="button" value="Change Password" onclick="location.href='@Url.Action("ChangePasswordCheck", "Account")'" />
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="col-md-4">
+
+        </div>
+
+        @if (Request.IsAuthenticated)
+        {
+
+            @*using (Html.BeginForm("Logout", "Account"))
+                {
+                    <button class="btn-lg btn-default text-center col-md-8" type="submit">Logout</button>
+                }*@
+            <input class="btn-lg btn-success text-center col-md-12" type="button" value="Log Out" onclick="location.href='@Url.Action("Logout", "Account")'" />
+        }
+
+
+    </div>
+}
+else
+{
+    <h1>Employee</h1>
+    <div class="container">
+        <h1 class="page-header text-center">WELCOME TO THE EMPLOYEE DATABASE</h1>
+        <div class="col-md-4"></div>
+
+        @*@using (Html.BeginForm("ViewEmployees", "Home"))
+            {
+                <button class="btn-lg btn-default text-center col-md-8" type="submit">View Employee Database</button>
+            }*@
+        <input class="btn-lg btn-primary text-center col-md-12" type="button" value="View Employee Database" onclick="location.href='@Url.Action("ViewEmployees", "Home")'" />
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="col-md-4"></div>
+        @if (Request.IsAuthenticated)
+        {
+
+            @*using (Html.BeginForm("ChangePasswordCheck", "Account"))
+                {
+                    <button class="btn-lg btn-default text-center col-md-8" type="submit">Change Password</button>
+                }*@
+            <input class="btn-lg btn btn-warning text-center col-md-12" type="button" value="Change Password" onclick="location.href='@Url.Action("ChangePasswordCheck", "Account")'" />
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="col-md-4"></div>
+        @if (Request.IsAuthenticated)
+        {
+
+            @*using (Html.BeginForm("Logout", "Account"))
+                {
+                    <button class="btn-lg btn-default text-center col-md-8" type="submit">Logout</button>
+                }*@
+            <input class="btn-lg btn-success text-center col-md-12" type="button" value="Log Out" onclick="location.href='@Url.Action("Logout", "Account")'" />
+        }
+
+
+
+
+    </div>
+}
+
+
+
+
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth, "{0:yyyy-MM-dd}")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate, "{0:yyyy-MM-dd}")
+                </td>
+
+
+
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>*@
+
+
+
+
+
+
+
+
+
+

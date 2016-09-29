@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="nishankc-001-subsite4" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Nishank\\Documents\\New\ folder\\Final\\EmployeeDatabase\\EmpDBFinal\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Nishank\\Documents\\New\ folder\\Final\\EmployeeDatabase\\EmpDBFinal\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DBContextEmployee-Web.config Connection String" description="" value="Data Source=sql5030.smarterasp.net;Initial Catalog=DB_A0CD9F_employeeDB;Persist Security Info=True;User ID=DB_A0CD9F_employeeDB_admin;Password=babykomal1;TrustServerCertificate=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Nishank\\Documents\\New\ folder\\Final\\EmployeeDatabase\\EmpDBFinal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DBContextEmployee']/@connectionString" />
+  </parameter>
+</parameters>

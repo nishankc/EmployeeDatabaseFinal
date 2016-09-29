@@ -1,0 +1,420 @@
+﻿@model EmpDBFinal.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+@if (ViewBag.displayRole == "yes")
+{
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h2><span class="glyphicon glyphicon-user top_usr"></span>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.Surname)</h2>
+                <hr />
+
+
+
+
+
+                <div class="empl_details">
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.FirstName)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.FirstName)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Surname)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Surname)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.DateOfBirth)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.DateOfBirth, "ShortDateTime")" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Position.PositionName)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Position.PositionName)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.StartDate)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.StartDate, "ShortDateTime")" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Username)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Username)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Years Of Service</span>
+                        <input type="text" class="form-control" disabled placeholder="@ViewBag.displayYears" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Address.Address1)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Address.Address1)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Address.Address2)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Address.Address2)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Address.Town)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Address.Town)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Address.County)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Address.County)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Address.Postcode)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Address.Postcode)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Address.PhoneNumber)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Address.PhoneNumber)" aria-describedby="basic-addon1">
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                @*<table class="table" id="vertical-1">
+
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                            <td>@Html.DisplayFor(model => model.FirstName)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Surname)</th>
+                            <td>@Html.DisplayFor(model => model.Surname)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
+                            <td>@Html.DisplayFor(model => model.DateOfBirth, "ShortDateTime")</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Position.PositionName)</th>
+                            <td>@Html.DisplayFor(model => model.Position.PositionName)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.StartDate)</th>
+                            <td>@Html.DisplayFor(model => model.StartDate, "ShortDateTime")</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Username)</th>
+                            <td>@Html.DisplayFor(model => model.Username)</td>
+                        </tr>
+                        <tr>
+                            <th>Years Of Service</th>
+                            <td>@ViewBag.displayYears</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Address.Address1)</th>
+                            <td>@Html.DisplayFor(model => model.Address.Address1)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Address.Address2)</th>
+                            <td>@Html.DisplayFor(model => model.Address.Address2)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Address.Town)</th>
+                            <td>@Html.DisplayFor(model => model.Address.Town)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Address.County)</th>
+                            <td>@Html.DisplayFor(model => model.Address.County)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Address.Postcode)</th>
+                            <td>@Html.DisplayFor(model => model.Address.Postcode)</td>
+                        </tr>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Address.PhoneNumber)</th>
+                            <td>@Html.DisplayFor(model => model.Address.PhoneNumber)</td>
+                        </tr>
+                    </table>*@
+            </div>
+            @*<div class="col-md-6">
+                    <div class="row">
+
+                        <br /><br /><br /><br /><br /><br /><br /><br />
+                        <div class="col-md-2"></div>
+                        <input class="btn-lg btn-default col-md-6" type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "Home", new { id = @Html.DisplayFor(model => model.EmployeeId) })'" />
+                    </div>
+                    <div class="row">
+                        <br /><br /><br /><br />
+                        <div class="col-md-2"></div>
+                        <input class="btn-lg btn-default col-md-6" type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Home", new { id = @Html.DisplayFor(model => model.EmployeeId) })'" />
+                    </div>
+                </div>*@
+        </div>
+    </div>
+
+}
+else
+{
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h2><span class="glyphicon glyphicon-user top_usr"></span>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.Surname)</h2>
+                <hr />
+
+
+
+
+
+                <div class="empl_details">
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.FirstName)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.FirstName)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Surname)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Surname)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.DateOfBirth)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.DateOfBirth, "ShortDateTime")" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Position.PositionName)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Position.PositionName)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.StartDate)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.StartDate, "ShortDateTime")" aria-describedby="basic-addon1">
+                    </div>
+
+                    
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Years Of Service</span>
+                        <input type="text" class="form-control" disabled placeholder="@ViewBag.displayYears" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Address.Address1)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Address.Address1)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Address.Address2)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Address.Address2)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Address.Town)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Address.Town)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Address.County)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Address.County)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Address.Postcode)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Address.Postcode)" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@Html.DisplayNameFor(model => model.Address.PhoneNumber)</span>
+                        <input type="text" class="form-control" disabled placeholder="@Html.DisplayFor(model => model.Address.PhoneNumber)" aria-describedby="basic-addon1">
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                @*<table class="table" id="vertical-1">
+
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                        <td>@Html.DisplayFor(model => model.FirstName)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Surname)</th>
+                        <td>@Html.DisplayFor(model => model.Surname)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
+                        <td>@Html.DisplayFor(model => model.DateOfBirth, "ShortDateTime")</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Position.PositionName)</th>
+                        <td>@Html.DisplayFor(model => model.Position.PositionName)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.StartDate)</th>
+                        <td>@Html.DisplayFor(model => model.StartDate, "ShortDateTime")</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Username)</th>
+                        <td>@Html.DisplayFor(model => model.Username)</td>
+                    </tr>
+                    <tr>
+                        <th>Years Of Service</th>
+                        <td>@ViewBag.displayYears</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.Address1)</th>
+                        <td>@Html.DisplayFor(model => model.Address.Address1)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.Address2)</th>
+                        <td>@Html.DisplayFor(model => model.Address.Address2)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.Town)</th>
+                        <td>@Html.DisplayFor(model => model.Address.Town)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.County)</th>
+                        <td>@Html.DisplayFor(model => model.Address.County)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.Postcode)</th>
+                        <td>@Html.DisplayFor(model => model.Address.Postcode)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.PhoneNumber)</th>
+                        <td>@Html.DisplayFor(model => model.Address.PhoneNumber)</td>
+                    </tr>
+                </table>*@
+            </div>
+            @*<div class="col-md-6">
+                <div class="row">
+
+                    <br /><br /><br /><br /><br /><br /><br /><br />
+                    <div class="col-md-2"></div>
+                    <input class="btn-lg btn-default col-md-6" type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "Home", new { id = @Html.DisplayFor(model => model.EmployeeId) })'" />
+                </div>
+                <div class="row">
+                    <br /><br /><br /><br />
+                    <div class="col-md-2"></div>
+                    <input class="btn-lg btn-default col-md-6" type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Home", new { id = @Html.DisplayFor(model => model.EmployeeId) })'" />
+                </div>
+            </div>*@
+        </div>
+    </div>
+}
+
+
+
+
+
+
+
+
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btns_bottom">
+
+@if (ViewBag.displayRole == "yes")
+{
+    <div class="btn_bottom">
+        @*<input class="btn btn-success" type="button" value="Back to Employee List" onclick="location.href='@Url.Action("ViewEmployees", "Home")'" />*@
+        <button class="btn btn-success" type="button" onclick="location.href='@Url.Action("ViewEmployees", "Home")'"><span class="glyphicon glyphicon-hand-left gl_btn"></span>Back to Employee List</button>
+    </div>
+
+    <div class="btn_bottom">
+
+        @using (Html.BeginForm("Index", "Account"))
+        {
+            <button class="btn btn-primary" type="button" onclick="location.href='@Url.Action("Index", "Account")'"><span class="glyphicon glyphicon-hand-left gl_btn"></span>Back to Main Menu</button>
+            @*<input class="btn btn-primary" type="button" value="Back to Main Menu" onclick="location.href='@Url.Action("Index", "Account")'" />*@
+        }
+
+    </div>
+
+    <div class="btn_bottom">
+        <button class="btn btn-warning" type="button" onclick="location.href='@Url.Action("Edit", "Home", new { id = @Html.DisplayFor(model => model.EmployeeId) })'"><span class="glyphicon glyphicon-pencil gl_btn"></span>Edit</button>
+        @*<input class="btn btn-warning" type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "Home", new { id = @Html.DisplayFor(model => model.EmployeeId) })'" />*@
+    </div>
+
+    <div class="btn_bottom">
+        <button class="btn btn-danger" type="button" onclick="location.href='@Url.Action("Delete", "Home", new { id = @Html.DisplayFor(model => model.EmployeeId) })'"><span class="glyphicon glyphicon-remove gl_btn"></span>Delete</button>
+        @*<input class="btn btn-danger" type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Home", new { id = @Html.DisplayFor(model => model.EmployeeId) })'" />*@
+    </div>
+
+}
+else
+{
+    <div class="btn_bottom">
+        @*<input class="btn btn-success" type="button" value="Back to Employee List" onclick="location.href='@Url.Action("ViewEmployees", "Home")'" />*@
+        <button class="btn btn-success" type="button" onclick="location.href='@Url.Action("ViewEmployees", "Home")'"><span class="glyphicon glyphicon-hand-left gl_btn"></span>Back to Employee List</button>
+    </div>
+
+    <div class="btn_bottom">
+
+        @using (Html.BeginForm("Index", "Account"))
+        {
+            <button class="btn btn-primary" type="button" onclick="location.href='@Url.Action("Index", "Account")'"><span class="glyphicon glyphicon-hand-left gl_btn"></span>Back to Main Menu</button>
+            @*<input class="btn btn-primary" type="button" value="Back to Main Menu" onclick="location.href='@Url.Action("Index", "Account")'" />*@
+        }
+
+    </div>
+
+}
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="row">
+        <div class="col-md-4">
+
+            <input class="btn-lg btn-primary col-md-8" type="button" value="Back to Employee List" onclick="location.href='@Url.Action("ViewEmployees", "Home")'" />
+
+        </div>
+
+        <div class="col-md-4">
+            @using (Html.BeginForm("Index", "Account"))
+            {
+                <input class="btn-lg btn-primary col-md-8" type="button" value="Back to Main Menu" onclick="location.href='@Url.Action("Index", "Account")'" />
+            }
+        </div>
+
+    </div>*@
+

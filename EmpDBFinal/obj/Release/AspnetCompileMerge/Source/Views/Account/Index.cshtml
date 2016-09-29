@@ -1,0 +1,90 @@
+﻿@model EmpDBFinal.Models.Employee
+
+
+@{
+    ViewBag.Title = "Employee Database Menu";
+}
+
+@if (ViewBag.displayRole == "yes")
+{
+    <h1>Manager</h1>
+    <div class="container">
+
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btns_4_top">
+
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" onclick="location.href='@Url.Action("ViewEmployees", "Home")'">
+                <span class="glyphicon glyphicon-th-list"></span>
+                @*<input class="btn-lg btn-primary text-center col-md-12" type="button" value="View Employee Database" />*@
+                <label>View Employee Database</label>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" onclick="location.href='@Url.Action("Create", "Home")'">
+                <span class="glyphicon glyphicon-user"></span>
+                @*<input class="btn-lg btn-default text-center col-md-12" type="button" value="Create a new Employee" />*@
+                <label>Create a new Employee</label>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" onclick="location.href='@Url.Action("ChangePasswordCheck", "Account")'">
+                @if (Request.IsAuthenticated)
+                {
+                    <span class="glyphicon glyphicon-pencil"></span>
+                        @*<input class="btn-lg btn-warning text-center col-md-12" type="button" value="Change Password" />*@
+                        <label>Change Password</label>
+                }
+            </div>
+
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" onclick="location.href='@Url.Action("Logout", "Account")'">
+                @if (Request.IsAuthenticated)
+                {
+                    <span class="glyphicon glyphicon-off"></span>
+                        @*<input class="btn-lg btn-success text-center col-md-12" type="button" value="Log Out" />*@
+                        <label>Log Out</label>
+                }
+            </div>
+
+        </div>
+
+    </div>
+}
+else
+{
+    <h1>Employee</h1>
+    <div class="container">
+
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btns_3_top">
+
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" onclick="location.href='@Url.Action("ViewEmployees", "Home")'">
+                <span class="glyphicon glyphicon-th-list"></span>
+                @*<input class="btn-lg btn-primary text-center col-md-12" type="button" value="View Employee Database" />*@
+                <label>View Employee Database</label>
+            </div>
+
+            
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" onclick="location.href='@Url.Action("ChangePasswordCheck", "Account")'">
+                @if (Request.IsAuthenticated)
+                {
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    @*<input class="btn-lg btn-warning text-center col-md-12" type="button" value="Change Password" />*@
+                    <label>Change Password</label>
+                }
+            </div>
+
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" onclick="location.href='@Url.Action("Logout", "Account")'">
+                @if (Request.IsAuthenticated)
+                {
+                    <span class="glyphicon glyphicon-off"></span>
+                    @*<input class="btn-lg btn-success text-center col-md-12" type="button" value="Log Out" />*@
+                    <label>Log Out</label>
+                }
+            </div>
+
+        </div>
+
+    </div>
+}
+

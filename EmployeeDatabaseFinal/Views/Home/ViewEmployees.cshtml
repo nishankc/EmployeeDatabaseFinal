@@ -1,0 +1,163 @@
+﻿@model IEnumerable<EmployeeDatabaseFinal.Employee>
+
+<script src="~/scripts/searchNames.js"></script>
+
+<h2>ViewEmployees</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    <p class="searchAreaSurname">
+
+        Search By Surname: @Html.TextBox("searchSurname", "", new { @class = "form-control" })
+        <input class="form-control btn-primary" type="submit" value="Search" />
+    </p>
+    <p class="searchAreaFirstName">
+
+        Search By First Name: @Html.TextBox("searchFirstName", "", new { @class = "form-control" })
+        <input class="form-control btn-primary" type="submit" value="Filter" />
+    </p>
+    <p>
+        <button class="btn btn-primary" type="button" id="beginSearch">Search</button>
+        <div class="btn-group">
+            <button class="btn btn-primary" type="button" id="SearchSurname">Search by Surname</button>
+            <button class="btn btn-primary" type="button" id="SearchFirstName">Search by First Name</button>
+        </div>
+    </p>
+}
+
+
+
+
+
+@if (ViewBag.displayRole == "yes")
+{
+    <table class="table table-hover">
+        <tr class="info">
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr onclick="location.href = '@(Url.Action("Details", "Home", new { id = item.EmployeeId }))'">
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth, "ShortDateTime")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate, "ShortDateTime")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+
+
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    </td>*@
+            </tr>
+        }
+
+    </table>
+
+}
+else
+{
+    <table class="table table-hover">
+        <tr class="info">
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr onclick="location.href = '@(Url.Action("Details", "Home", new { id = item.EmployeeId }))'">
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth, "ShortDateTime")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Position)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate, "ShortDateTime")
+                </td>
+
+
+
+                @*<td>
+                        @Html.ActionLink("Details", "Details", new { id = item.id })
+
+                    </td>*@
+            </tr>
+        }
+
+    </table>
+
+}
+
+
+
+
+<div>
+    @using (Html.BeginForm("Index", "Account"))
+    {
+        <button class="btn-lg btn-default" type="submit">Back to Main Menu</button>
+    }
+</div>
+
+
